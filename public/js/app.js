@@ -3427,6 +3427,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: ['courses'],
+  mounted: function mounted() {
+    console.log(this.courses);
   }
 });
 
