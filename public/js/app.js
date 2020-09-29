@@ -3423,10 +3423,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      courseList: this.courses
+    };
   },
   props: ['courses'],
   mounted: function mounted() {
@@ -3447,6 +3457,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var _Jetstream_Welcome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../Jetstream/Welcome */ "./resources/js/Jetstream/Welcome.vue");
+//
 //
 //
 //
@@ -26455,10 +26466,16 @@ var render = function() {
     "app-layout",
     [
       _c("template", { slot: "header" }, [
-        _vm._v("\r\n\r\n        liste des formations\r\n    ")
+        _vm._v("\r\n\r\n        liste des formations\r\n\r\n    ")
       ]),
       _vm._v(" "),
-      _c("h1", [_vm._v("coucou")])
+      _vm._l(this.courseList, function(course) {
+        return _c("div", { key: course.id }, [
+          _c("div", [_vm._v(" " + _vm._s(course.title))]),
+          _vm._v(" "),
+          _c("div", [_vm._v(" " + _vm._s(course.description))])
+        ])
+      })
     ],
     2
   )

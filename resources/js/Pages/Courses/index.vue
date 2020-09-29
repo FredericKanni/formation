@@ -3,8 +3,14 @@
     <template slot='header'>
 
         liste des formations
+
     </template>
-    <h1>coucou</h1>
+    <div v-for='course in this.courseList' v-bind:key='course.id'>
+        <div> {{course.title}}</div>
+        <div> {{course.description}}</div>
+
+    </div>
+
 </app-layout>
 </template>
 
@@ -14,6 +20,12 @@ import AppLayout from './../../Layouts/AppLayout'
 export default {
     components: {
         AppLayout,
+    },
+
+    data() {
+        return {
+            courseList: this.courses,
+        }
     },
 
     props: ['courses'],
