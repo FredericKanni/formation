@@ -3035,6 +3035,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3413,6 +3421,11 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
+//
+//
+//
+//
+//
 //
 //
 //
@@ -25172,6 +25185,21 @@ var render = function() {
                         "\n                            Dashboard\n                        "
                       )
                     ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "jet-nav-link",
+                    {
+                      attrs: {
+                        href: "/courses",
+                        active: _vm.$page.currentRouteName == "courses.index"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                            Les Formations\n                        "
+                      )
+                    ]
                   )
                 ],
                 1
@@ -26464,16 +26492,40 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "app-layout",
+    {
+      scopedSlots: _vm._u([
+        {
+          key: "header",
+          fn: function() {
+            return [_vm._v("\r\n\r\n        liste des formations\r\n\r\n    ")]
+          },
+          proxy: true
+        }
+      ])
+    },
     [
-      _c("template", { slot: "header" }, [
-        _vm._v("\r\n\r\n        liste des formations\r\n\r\n    ")
-      ]),
       _vm._v(" "),
       _vm._l(this.courseList, function(course) {
-        return _c("div", { key: course.id }, [
-          _c("div", [_vm._v(" " + _vm._s(course.title))]),
-          _vm._v(" "),
-          _c("div", [_vm._v(" " + _vm._s(course.description))])
+        return _c("div", { key: course.id, staticClass: "py-6" }, [
+          _c("div", { staticClass: "mx-8 bg-white rounded shadow p-4" }, [
+            _c("div", { staticClass: "text-4xl " }, [
+              _vm._v(" " + _vm._s(course.title))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "text-sm text-gray-500" }, [
+              _vm._v(" " + _vm._s(course.description))
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass:
+                  "bg-indigo-500 text-white px-2 py-1 mt-3 inline-block\r\n            rounded hover:bg-indigo-700\r\n            ",
+                attrs: { href: "#" }
+              },
+              [_vm._v(" voir la formation")]
+            )
+          ])
         ])
       })
     ],
