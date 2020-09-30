@@ -3492,6 +3492,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -26654,23 +26666,57 @@ var render = function() {
     },
     [
       _vm._v(" "),
-      _c("iframe", {
-        staticClass: "w-full h-screen",
-        attrs: {
-          src: _vm.course.episodes[0].video_url,
-          frameborder: "0",
-          allow:
-            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
-          allowfullscreen: ""
-        }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "text-2xl text-gray-700 " }, [
-        _vm._v(" " + _vm._s(_vm.course.episodes[0].title))
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "text-sm text-gray-500" }, [
-        _vm._v(" " + _vm._s(_vm.course.episodes[0].description))
+      _c("div", { staticClass: "mx-8 py-4" }, [
+        _c("div", { staticClass: "text-2xl text-gray-700 " }, [
+          _vm._v(" " + _vm._s(_vm.course.episodes[0].title))
+        ]),
+        _vm._v(" "),
+        _c("iframe", {
+          staticClass: "w-full h-screen",
+          attrs: {
+            src: _vm.course.episodes[0].video_url,
+            frameborder: "0",
+            allow:
+              "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+            allowfullscreen: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "text-sm text-gray-500" }, [
+          _vm._v(" " + _vm._s(_vm.course.episodes[0].description))
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "mt-6" },
+          _vm._l(this.course.episodes, function(episode, index) {
+            return _c("ul", { key: episode.id }, [
+              _c("li", { staticClass: "mt-3" }, [
+                _vm._v(
+                  "\r\n                    episode n°" +
+                    _vm._s(index + 1) +
+                    " - " +
+                    _vm._s(episode.title) +
+                    "\r\n                    "
+                ),
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "text-gray-500 focus:text-indigo-500 focus:outline-none",
+                    on: {
+                      click: function($event) {
+                        return _vm.switchEpisode()
+                      }
+                    }
+                  },
+                  [_vm._v(" Voir l'episode")]
+                )
+              ])
+            ])
+          }),
+          0
+        )
       ])
     ]
   )
