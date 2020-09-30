@@ -1,16 +1,17 @@
 <template>
 <app-layout>
     <template #header>
-
-        liste des formations
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            liste des formations
+        </h2>
 
     </template>
     <div class="py-6" v-for='course in this.courseList' v-bind:key='course.id'>
         <div class="mx-8 bg-white rounded shadow p-4">
-
+            <div class="text-sm text-gray-700 ">mise en ligne par : {{course.user.name}}</div>
             <div class="flex justify-between items-center">
                 <div class="text-4xl "> {{course.title}}</div>
-                <div class="text-sm text-gray-700">25 episodes</div>
+                <div class="text-sm text-gray-700">{{course.episodes_count}} episodes</div>
             </div>
 
             <div class="text-sm text-gray-500"> {{course.description}}</div>

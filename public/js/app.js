@@ -3446,6 +3446,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -26502,7 +26503,16 @@ var render = function() {
         {
           key: "header",
           fn: function() {
-            return [_vm._v("\r\n\r\n        liste des formations\r\n\r\n    ")]
+            return [
+              _c(
+                "h2",
+                {
+                  staticClass:
+                    "font-semibold text-xl text-gray-800 leading-tight"
+                },
+                [_vm._v("\r\n            liste des formations\r\n        ")]
+              )
+            ]
           },
           proxy: true
         }
@@ -26513,13 +26523,17 @@ var render = function() {
       _vm._l(this.courseList, function(course) {
         return _c("div", { key: course.id, staticClass: "py-6" }, [
           _c("div", { staticClass: "mx-8 bg-white rounded shadow p-4" }, [
+            _c("div", { staticClass: "text-sm text-gray-700 " }, [
+              _vm._v("mise en ligne par : " + _vm._s(course.user.name))
+            ]),
+            _vm._v(" "),
             _c("div", { staticClass: "flex justify-between items-center" }, [
               _c("div", { staticClass: "text-4xl " }, [
                 _vm._v(" " + _vm._s(course.title))
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "text-sm text-gray-700" }, [
-                _vm._v("25 episodes")
+                _vm._v(_vm._s(course.episodes_count) + " episodes")
               ])
             ]),
             _vm._v(" "),
