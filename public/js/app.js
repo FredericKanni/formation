@@ -3512,8 +3512,19 @@ __webpack_require__.r(__webpack_exports__);
   props: ['course'],
   data: function data() {
     return {
-      courseShow: this.course
+      courseShow: this.course,
+      currentKey: 0
     };
+  },
+  methods: {
+    switchEpisode: function switchEpisode(index) {
+      this.currentKey = index;
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
   },
   mounted: function mounted() {
     console.log(this.course);
@@ -26668,13 +26679,13 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "mx-8 py-4" }, [
         _c("div", { staticClass: "text-2xl text-gray-700 " }, [
-          _vm._v(" " + _vm._s(_vm.course.episodes[0].title))
+          _vm._v(" " + _vm._s(_vm.course.episodes[this.currentKey].title))
         ]),
         _vm._v(" "),
         _c("iframe", {
           staticClass: "w-full h-screen",
           attrs: {
-            src: _vm.course.episodes[0].video_url,
+            src: _vm.course.episodes[this.currentKey].video_url,
             frameborder: "0",
             allow:
               "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
@@ -26683,7 +26694,7 @@ var render = function() {
         }),
         _vm._v(" "),
         _c("div", { staticClass: "text-sm text-gray-500" }, [
-          _vm._v(" " + _vm._s(_vm.course.episodes[0].description))
+          _vm._v(" " + _vm._s(_vm.course.episodes[this.currentKey].description))
         ]),
         _vm._v(" "),
         _c(
@@ -26706,7 +26717,7 @@ var render = function() {
                       "text-gray-500 focus:text-indigo-500 focus:outline-none",
                     on: {
                       click: function($event) {
-                        return _vm.switchEpisode()
+                        return _vm.switchEpisode(index)
                       }
                     }
                   },
