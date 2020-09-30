@@ -32,13 +32,13 @@ export default {
         AppLayout,
     },
 
+    props: ['courses'],
+
     data() {
         return {
             courseList: this.courses,
         }
     },
-
-    props: ['courses'],
 
     mounted() {
         console.log(this.courses);

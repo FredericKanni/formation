@@ -14,7 +14,7 @@ class CourseController extends Controller
 
         $courses = Course::with('user')->withCount('episodes')->get();
         // dd($courses);
-        return Inertia::render('Courses/index', [
+        return Inertia::render('Courses/Index', [
             'courses' => $courses
         ]);
     }
@@ -22,7 +22,7 @@ class CourseController extends Controller
     {
         $course = Course::where('id', $id)->with('episodes')->first();
 
-        return Inertia::render('Courses/show', [
+        return Inertia::render('Courses/Show', [
             'course' => $course
         ]);
     }
