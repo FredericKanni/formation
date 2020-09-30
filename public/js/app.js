@@ -3492,13 +3492,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -26661,30 +26654,23 @@ var render = function() {
     },
     [
       _vm._v(" "),
-      _c("div", { staticClass: "mx-8 my-4 bg-white rounded shadow p-4" }, [
-        _c("div", { staticClass: "text-sm text-gray-700 " }, [
-          _vm._v("mise en ligne par :")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex justify-between items-center" }, [
-          _c("div", { staticClass: "text-4xl " }, [
-            _vm._v(" " + _vm._s(_vm.course.title))
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "text-sm text-gray-700" }, [
-            _vm._v(_vm._s(_vm.course.episodes_count) + " episodes")
-          ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass:
-              "bg-indigo-500 text-white px-2 py-1 mt-3 inline-block\r\n            rounded hover:bg-indigo-700\r\n            ",
-            attrs: { href: "courses/" + _vm.course.id }
-          },
-          [_vm._v(" voir la formation")]
-        )
+      _c("iframe", {
+        staticClass: "w-full h-screen",
+        attrs: {
+          src: _vm.course.episodes[0].video_url,
+          frameborder: "0",
+          allow:
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+          allowfullscreen: ""
+        }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "text-2xl text-gray-700 " }, [
+        _vm._v(" " + _vm._s(_vm.course.episodes[0].title))
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "text-sm text-gray-500" }, [
+        _vm._v(" " + _vm._s(_vm.course.episodes[0].description))
       ])
     ]
   )

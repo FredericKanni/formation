@@ -7,17 +7,10 @@
 
     </template>
 
-    <div class="mx-8 my-4 bg-white rounded shadow p-4">
-        <div class="text-sm text-gray-700 ">mise en ligne par :</div>
-        <div class="flex justify-between items-center">
-            <div class="text-4xl "> {{course.title}}</div>
-            <div class="text-sm text-gray-700">{{course.episodes_count}} episodes</div>
-        </div>
+    <iframe class="w-full h-screen" :src="course.episodes[0].video_url" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-        <a :href="'courses/' + course.id" class="bg-indigo-500 text-white px-2 py-1 mt-3 inline-block
-            rounded hover:bg-indigo-700
-            "> voir la formation</a>
-    </div>
+    <div class="text-2xl text-gray-700 "> {{course.episodes[0].title}}</div>
+    <div class="text-sm text-gray-500"> {{course.episodes[0].description}}</div>
 
 </app-layout>
 </template>
