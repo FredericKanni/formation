@@ -26,6 +26,7 @@ Route::get('/courses',  'App\Http\Controllers\CourseController@index')->name('co
 
 Route::group(['auth:sanctum', 'verified'] , function () {
     Route::get('/courses/{id}',  'App\Http\Controllers\CourseController@show')->name('courses.show');
+   // Route::get('/courses/{id}',  'App\Http\Controllers\CourseController@show')->name('courses.show')->where('id', '[0-9]+');
     Route::get('/dashboard', function () {
         return Inertia\Inertia::render('Dashboard');
     })->name('dashboard');

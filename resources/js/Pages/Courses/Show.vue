@@ -9,14 +9,14 @@
 
     <div class="mx-8 py-4">
 
-        <div class="text-2xl text-gray-700 "> {{course.episodes[this.currentKey].title}}</div>
+        <div class="text-2xl text-gray-700 "> {{this.courseShow.episodes[this.currentKey].title}}</div>
+        {{this.courseShow.episodes[this.currentKey]}}
+        <iframe class="w-full h-screen" :src="this.courseShow.episodes[this.currentKey].video_url" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-        <iframe class="w-full h-screen" :src="course.episodes[this.currentKey].video_url" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-        <div class="text-sm text-gray-500"> {{course.episodes[this.currentKey].description}}</div>
+        <div class="text-sm text-gray-500"> {{this.courseShow.episodes[this.currentKey].description}}</div>
 
         <div class="mt-6">
-            <ul v-for="(episode, index) in this.course.episodes" v-bind:key="episode.id">
+            <ul v-for="(episode, index) in this.courseShow.episodes" v-bind:key="episode.id ">
                 <li class="mt-3">
                     episode n°{{index +1}} - {{episode.title}}
                     <button class="text-gray-500 focus:text-indigo-500 focus:outline-none" @click="switchEpisode(index)"> Voir l'episode</button>

@@ -26679,13 +26679,17 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "mx-8 py-4" }, [
         _c("div", { staticClass: "text-2xl text-gray-700 " }, [
-          _vm._v(" " + _vm._s(_vm.course.episodes[this.currentKey].title))
+          _vm._v(" " + _vm._s(this.courseShow.episodes[this.currentKey].title))
         ]),
-        _vm._v(" "),
+        _vm._v(
+          "\r\n        " +
+            _vm._s(this.courseShow.episodes[this.currentKey]) +
+            "\r\n        "
+        ),
         _c("iframe", {
           staticClass: "w-full h-screen",
           attrs: {
-            src: _vm.course.episodes[this.currentKey].video_url,
+            src: this.courseShow.episodes[this.currentKey].video_url,
             frameborder: "0",
             allow:
               "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
@@ -26694,13 +26698,15 @@ var render = function() {
         }),
         _vm._v(" "),
         _c("div", { staticClass: "text-sm text-gray-500" }, [
-          _vm._v(" " + _vm._s(_vm.course.episodes[this.currentKey].description))
+          _vm._v(
+            " " + _vm._s(this.courseShow.episodes[this.currentKey].description)
+          )
         ]),
         _vm._v(" "),
         _c(
           "div",
           { staticClass: "mt-6" },
-          _vm._l(this.course.episodes, function(episode, index) {
+          _vm._l(this.courseShow.episodes, function(episode, index) {
             return _c("ul", { key: episode.id }, [
               _c("li", { staticClass: "mt-3" }, [
                 _vm._v(
